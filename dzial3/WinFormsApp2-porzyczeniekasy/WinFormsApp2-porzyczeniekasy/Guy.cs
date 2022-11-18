@@ -13,17 +13,20 @@ namespace WinFormsApp2_porzyczeniekasy
             cash = b;
         }
         string name;
-        int cash;
+        public int cash;
         public int GiveCash(int iloscWysylanych)
         {
-
-            cash -= iloscWysylanych;
-            return iloscWysylanych;
+            
+                cash -= iloscWysylanych;
+                return iloscWysylanych;
+            
         }
         public void ReceiveCash(int iloscOdebranych)
         {
-            cash += iloscOdebranych;
             
+                cash += iloscOdebranych;
+            
+        
         }
         public string setInfo()
         {

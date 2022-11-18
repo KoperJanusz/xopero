@@ -36,6 +36,7 @@ namespace WinFormsApp2_porzyczeniekasy
             this.label3 = new System.Windows.Forms.Label();
             this.send = new System.Windows.Forms.Button();
             this.information = new System.Windows.Forms.Label();
+            this.send2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericJoe)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericBob)).BeginInit();
             this.SuspendLayout();
@@ -61,6 +62,11 @@ namespace WinFormsApp2_porzyczeniekasy
             // numericJoe
             // 
             this.numericJoe.Location = new System.Drawing.Point(145, 38);
+            this.numericJoe.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.numericJoe.Name = "numericJoe";
             this.numericJoe.Size = new System.Drawing.Size(120, 23);
             this.numericJoe.TabIndex = 4;
@@ -68,6 +74,11 @@ namespace WinFormsApp2_porzyczeniekasy
             // numericBob
             // 
             this.numericBob.Location = new System.Drawing.Point(567, 38);
+            this.numericBob.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.numericBob.Name = "numericBob";
             this.numericBob.Size = new System.Drawing.Size(120, 23);
             this.numericBob.TabIndex = 5;
@@ -83,11 +94,11 @@ namespace WinFormsApp2_porzyczeniekasy
             // 
             // send
             // 
-            this.send.Location = new System.Drawing.Point(385, 102);
+            this.send.Location = new System.Drawing.Point(115, 102);
             this.send.Name = "send";
-            this.send.Size = new System.Drawing.Size(75, 23);
+            this.send.Size = new System.Drawing.Size(150, 23);
             this.send.TabIndex = 8;
-            this.send.Text = "wysij";
+            this.send.Text = "wysij pieniadze do boba";
             this.send.UseVisualStyleBackColor = true;
             this.send.Click += new System.EventHandler(this.send_Click);
             // 
@@ -99,11 +110,22 @@ namespace WinFormsApp2_porzyczeniekasy
             this.information.Size = new System.Drawing.Size(0, 15);
             this.information.TabIndex = 9;
             // 
+            // send2
+            // 
+            this.send2.Location = new System.Drawing.Point(567, 102);
+            this.send2.Name = "send2";
+            this.send2.Size = new System.Drawing.Size(142, 23);
+            this.send2.TabIndex = 10;
+            this.send2.Text = "wyslij pieniadze do joe";
+            this.send2.UseVisualStyleBackColor = true;
+            this.send2.Click += new System.EventHandler(this.send2_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.send2);
             this.Controls.Add(this.information);
             this.Controls.Add(this.send);
             this.Controls.Add(this.label3);
@@ -113,6 +135,7 @@ namespace WinFormsApp2_porzyczeniekasy
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericJoe)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericBob)).EndInit();
             this.ResumeLayout(false);
@@ -128,6 +151,7 @@ namespace WinFormsApp2_porzyczeniekasy
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button send;
         private System.Windows.Forms.Label information;
+        private System.Windows.Forms.Button send2;
     }
 }
 
