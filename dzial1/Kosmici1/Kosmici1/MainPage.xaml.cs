@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;using System.Windows.Threading;
+using System.Text;
+using System.Windows.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -14,7 +15,7 @@ using System.Windows.Media.Animation;
 
 
 
-namespace kosmici
+namespace Kosmici1
 {
     /// <summary>
     /// Logika interakcji dla klasy MainPage.xaml
@@ -22,8 +23,8 @@ namespace kosmici
     public partial class MainPage : Page
     {
         Random random = new Random();
-         DispatcherTimer enemyTimer = new  DispatcherTimer();
-         DispatcherTimer targetTimer = new  DispatcherTimer();
+        DispatcherTimer enemyTimer = new DispatcherTimer();
+        DispatcherTimer targetTimer = new DispatcherTimer();
         bool humanCaptured = false;
 
         public MainPage()
@@ -35,10 +36,10 @@ namespace kosmici
 
             targetTimer.Tick += TargetTimer_Tick;
             targetTimer.Interval = TimeSpan.FromSeconds(.1);
-            
 
-              
-                 
+
+
+
         }
 
         private void TargetTimer_Tick(object sender, EventArgs e)
@@ -68,7 +69,7 @@ namespace kosmici
         private void startButton_Click(object sender, RoutedEventArgs e)
         {
             StartGame();
-            
+
         }
 
         private void StartGame()
@@ -95,7 +96,7 @@ namespace kosmici
             enemy.MouseEnter += Enemy_MouseEnter;
         }
 
-        
+
 
         private void AnimateEnemy(ContentControl enemy, double from, double to, string propertyToAnimate)
         {
@@ -118,12 +119,12 @@ namespace kosmici
                 EndTheGame();
         }
 
-        
 
-        
 
-        
-        
+
+
+
+
 
         private void playArea_MouseMove(object sender, MouseEventArgs e)
         {
@@ -175,3 +176,5 @@ namespace kosmici
         }
     }
 }
+
+

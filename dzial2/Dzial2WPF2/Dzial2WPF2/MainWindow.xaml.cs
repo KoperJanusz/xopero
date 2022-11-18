@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace kosmici
+namespace Dzial2WPF2
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -23,6 +23,19 @@ namespace kosmici
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void changeText_Click(object sender, RoutedEventArgs e)
+        {
+            if (enableCheckBox.IsChecked == true)
+            {
+                labelToChange.Text="mozliwosc zmiany tekstu zostala wlaczona";
+            }
+            else
+            {
+                labelToChange.Text = "mozliwosc zmiany tekstu zostala wylaczona";
+                
+            }
         }
     }
 }
