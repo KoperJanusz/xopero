@@ -1,8 +1,17 @@
+<<<<<<<< HEAD:dzial2/Dzial2WPF/Dzial2WPF/App.xaml
 ﻿<Application x:Class="Dzial2WPF.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:Dzial2WPF"
              StartupUri="MainWindow.xaml">
+========
+﻿<Application x:Class="kosmici.App"
+            
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:kosmici"
+             StartupUri="MainPage.xaml">
+>>>>>>>> 163c396f30164fbee7912f18cd2f116bc12c312e:kosmici/kosmici/App.xaml
     <Application.Resources>
          
     </Application.Resources>
