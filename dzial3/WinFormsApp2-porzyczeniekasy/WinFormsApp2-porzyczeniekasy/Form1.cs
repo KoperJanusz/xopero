@@ -27,9 +27,6 @@ namespace WinFormsApp2_porzyczeniekasy
 
 
         }
-        
-        
-
         private void send_Click(object sender, EventArgs e)
         {
             
