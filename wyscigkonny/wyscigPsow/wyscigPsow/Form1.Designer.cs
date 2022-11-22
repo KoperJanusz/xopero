@@ -41,16 +41,12 @@ namespace wyscigPsow
             this.janekRadio = new System.Windows.Forms.RadioButton();
             this.bartekRadio = new System.Windows.Forms.RadioButton();
             this.arekRadio = new System.Windows.Forms.RadioButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.nrPsa = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.reset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pies1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pies2)).BeginInit();
@@ -122,7 +118,7 @@ namespace wyscigPsow
             this.wielkoscBet.Size = new System.Drawing.Size(120, 23);
             this.wielkoscBet.TabIndex = 8;
             this.wielkoscBet.Value = new decimal(new int[] {
-            15,
+            5,
             0,
             0,
             0});
@@ -135,6 +131,7 @@ namespace wyscigPsow
             this.bet.TabIndex = 11;
             this.bet.Text = "Postaw";
             this.bet.UseVisualStyleBackColor = true;
+            this.bet.Click += new System.EventHandler(this.bet_Click);
             // 
             // start
             // 
@@ -149,6 +146,7 @@ namespace wyscigPsow
             // janekRadio
             // 
             this.janekRadio.AutoSize = true;
+            this.janekRadio.Checked = true;
             this.janekRadio.Location = new System.Drawing.Point(55, 260);
             this.janekRadio.Name = "janekRadio";
             this.janekRadio.Size = new System.Drawing.Size(97, 19);
@@ -164,7 +162,6 @@ namespace wyscigPsow
             this.bartekRadio.Name = "bartekRadio";
             this.bartekRadio.Size = new System.Drawing.Size(101, 19);
             this.bartekRadio.TabIndex = 14;
-            this.bartekRadio.TabStop = true;
             this.bartekRadio.Text = "Bartek ma 75zl";
             this.bartekRadio.UseVisualStyleBackColor = true;
             // 
@@ -175,30 +172,8 @@ namespace wyscigPsow
             this.arekRadio.Name = "arekRadio";
             this.arekRadio.Size = new System.Drawing.Size(92, 19);
             this.arekRadio.TabIndex = 15;
-            this.arekRadio.TabStop = true;
             this.arekRadio.Text = "Arek ma 45zl";
             this.arekRadio.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(396, 256);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 23);
-            this.textBox1.TabIndex = 16;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(396, 281);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 23);
-            this.textBox2.TabIndex = 17;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(396, 306);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 23);
-            this.textBox3.TabIndex = 18;
             // 
             // nrPsa
             // 
@@ -236,57 +211,43 @@ namespace wyscigPsow
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(238, 264);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 15);
+            this.label2.Size = new System.Drawing.Size(121, 15);
             this.label2.TabIndex = 22;
-            this.label2.Text = "label2";
+            this.label2.Text = "Janek nic nie postawil";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(238, 289);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(38, 15);
+            this.label3.Size = new System.Drawing.Size(125, 15);
             this.label3.TabIndex = 23;
-            this.label3.Text = "label3";
+            this.label3.Text = "Bartek nic nie postawil";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(238, 310);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(38, 15);
+            this.label4.Size = new System.Drawing.Size(116, 15);
             this.label4.TabIndex = 24;
-            this.label4.Text = "label4";
+            this.label4.Text = "Arek nic nie postawil";
             // 
             // timer1
             // 
             this.timer1.Interval = 20;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // reset
-            // 
-            this.reset.Location = new System.Drawing.Point(530, 228);
-            this.reset.Name = "reset";
-            this.reset.Size = new System.Drawing.Size(75, 23);
-            this.reset.TabIndex = 25;
-            this.reset.Text = "Reset";
-            this.reset.UseVisualStyleBackColor = true;
-            this.reset.Click += new System.EventHandler(this.reset_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(630, 474);
-            this.Controls.Add(this.reset);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.nrPsa);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.arekRadio);
             this.Controls.Add(this.bartekRadio);
             this.Controls.Add(this.janekRadio);
@@ -326,16 +287,12 @@ namespace wyscigPsow
         private System.Windows.Forms.RadioButton janekRadio;
         private System.Windows.Forms.RadioButton bartekRadio;
         private System.Windows.Forms.RadioButton arekRadio;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.NumericUpDown nrPsa;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Button reset;
     }
 }
 

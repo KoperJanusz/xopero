@@ -4,14 +4,18 @@ using System.Text;
 using System.Windows.Forms;
 namespace wyscigPsow
 {
-    class Guy
+    public class Guy
     {
         public string Name;
-        public Bet Mybet=null;
+        public Bet Mybet;
         public int Cash;
         public RadioButton MyRadioButton;
         public Label MyLabel;
 
+        public Guy()
+        {
+            Mybet = new Bet();
+        }
         public void UpdateLabels()
         {
             MyRadioButton.Text = Name + " ma " + Cash;
@@ -37,7 +41,7 @@ namespace wyscigPsow
         }
         public void Collect(int Winner)
         {
-
+            Cash += Mybet.PayOut(Winner);
         }
 
     }

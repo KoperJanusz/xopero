@@ -4,7 +4,7 @@ using System.Text;
 
 namespace wyscigPsow
 {
-    class Bet
+    public class Bet
     {
         public int Amount;
         public int Dog;
@@ -12,11 +12,19 @@ namespace wyscigPsow
 
         public string GetDescription()
         {
-            return "a";
+            return this.Bettor.Name+" "+this.Amount+" na psa numer "+this.Dog;
         }
         public int PayOut(int winner)
         {
-            return 1;
+            if(Dog==winner)
+            {
+                return Amount;
+            }
+            else
+            {
+                return -Amount;
+            }
+            
         }
     }
 }

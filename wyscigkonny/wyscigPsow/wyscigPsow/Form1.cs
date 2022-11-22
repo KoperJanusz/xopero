@@ -65,7 +65,16 @@ namespace wyscigPsow
                 if (pies[i].Location >= tor.Width-pies1.Width)
                 {
                     timer1.Stop();
-                    MessageBox.Show("wygral" + pies[i]);
+                    MessageBox.Show("pies numer " + (i+1) + " wygral");
+                    
+                    
+                        for (int z = 0; z < 3; z++)
+                        {
+                            Guys[z].Collect(i + 1);
+                            Guys[z].UpdateLabels();
+                        }
+                    
+                    resetfunction();
                     break;                 
                 }
                 else
@@ -75,13 +84,35 @@ namespace wyscigPsow
             }
         }
 
-        private void reset_Click(object sender, EventArgs e)
+        
+        private void resetfunction()
         {
-            for(int i = 0; i <4; i++)
+            for (int i = 0; i < 4; i++)
             {
                 pies[i].TakeStartingPosition();
             }
         }
+
+        private void bet_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                if(Guys[i].MyRadioButton.Checked){
+                    if (Guys[i].PlaceBet(Decimal.ToInt32(wielkoscBet.Value), Decimal.ToInt32(nrPsa.Value)) == true)
+                    {
+                        Guys[i].PlaceBet(Decimal.ToInt32(wielkoscBet.Value), Decimal.ToInt32(nrPsa.Value));
+                        Guys[i].UpdateLabels();
+                        Guys[i].MyLabel.Text = Guys[i].Mybet.GetDescription();
+
+
+                    }
+                }
+            }
+
+
+
+        }
+
     }        
 
 }

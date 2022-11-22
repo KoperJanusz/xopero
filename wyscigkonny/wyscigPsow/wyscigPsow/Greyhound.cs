@@ -6,7 +6,7 @@ using System.Threading;
 
 namespace wyscigPsow
 {
-    class Greyhound
+    public class Greyhound
     {
         public int StarttingPosition;
         public int Racetracklenght;
