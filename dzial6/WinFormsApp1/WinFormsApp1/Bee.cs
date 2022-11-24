@@ -4,7 +4,7 @@ using System.Text;
 
 namespace WinFormsApp1
 {
-    class Bee
+    public class Bee : IStingPatrol
     {
         public const double HoneyUnitsConsumedPerMg = .25;
         public double WeightMg { get; private set; }
@@ -16,5 +16,14 @@ namespace WinFormsApp1
         {
             return WeightMg * HoneyUnitsConsumedPerMg;
         }
-    }
+        public int AlertLevel { get; }
+        public int StingerLenght { get; set; }
+        public bool LookForEnemies()
+        {
+            return true;
+        }
+        public int SharpenStinger(int Lenght)
+        {
+        return 0;}
+        }
 }

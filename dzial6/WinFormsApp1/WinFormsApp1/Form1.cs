@@ -22,6 +22,9 @@ namespace WinFormsApp1
             workers[2] = new Worker(new string[] { "Utrzymywanie ula", "Patrol z żšdłami" }, 149);
             workers[3] = new Worker(new string[] { "Zbieranie nektaru", "Wytwarzanie miodu", "Pielęgnacja jaj", "Nauczanie pszczółek", "Utrzymywanie ula", "Patrol z żšdłami" }, 155);
             queen = new Queen(workers, 275);
+            NectarStinger bobTheBee = new NectarStinger();
+            bobTheBee.LookForEnemies();
+            bobTheBee.FindFlowers();
         }
 
         private Queen queen;

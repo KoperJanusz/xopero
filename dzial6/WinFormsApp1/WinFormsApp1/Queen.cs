@@ -32,7 +32,7 @@ namespace WinFormsApp1
                 if (workers[i].DidYouFinish())
                     report += "Robotnica nr " + (i + 1) + " zakonczyla swoje zadanie\r\n";
                 if (String.IsNullOrEmpty(workers[i].CurrentJob))
-                    report += "Robotnica nr " + (i + 1) + " nie pracuje\r\n";
+                    report += "Robotnica nr " + (i + 1) + " nie pracuje\r\n";   
                 else
                     if (workers[i].ShiftsLeft > 0)
                     report += "Robotnica numer " + (i + 1) + " robi " + workers[i].CurrentJob + "jeszcze przez " + workers[i].ShiftsLeft + " zmiany\r\n";
