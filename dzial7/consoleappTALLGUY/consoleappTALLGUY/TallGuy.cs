@@ -12,10 +12,12 @@ namespace consoleappTALLGUY
         }
         static void Main(string[] args)
         {
-            TallGuy tallguy = new TallGuy() { Height = 74, Name = "Adam" };
-            tallguy.TalkAboutYourself();
-            Console.WriteLine(tallguy.FunnyThingIHave);
-            tallguy.Honk();
+            ScaryScary fingersTheClown = new ScaryScary("duze buty", 35);
+            FunnyFunny someFunnyClown = fingersTheClown;
+            IScaryClown someOtherScaryClown = someFunnyClown as ScaryScary;
+            someOtherScaryClown.Honk();
+            Console.ReadKey();
+
         
         }
         public string FunnyThingIHave
