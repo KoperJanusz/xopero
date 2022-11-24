@@ -18,7 +18,7 @@ namespace consoleappTALLGUY
         }
         public void ScareLittleChildren()
         {
-            Console.WriteLine("BUU, MAM CIE!");
+            Console.WriteLine("Nie mozesz miec mojego "+base.funnyThingIHave);
         }
     }
 }

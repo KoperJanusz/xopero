@@ -10,6 +10,14 @@ namespace consoleappTALLGUY
         {
             Console.WriteLine("Nazywam sie " + Name + " I mam " + Height + " centymetrow wzrostu");
         }
+        public string FunnyThingIHave
+        {
+            get { return "duze buty"; }
+        }
+        public void Honk()
+        {
+            Console.WriteLine("tut tuut!");
+        }
         static void Main(string[] args)
         {
             ScaryScary fingersTheClown = new ScaryScary("duze buty", 35);
@@ -20,14 +28,7 @@ namespace consoleappTALLGUY
 
         
         }
-        public string FunnyThingIHave
-        {
-            get { return "duze buty"; }
-        }
-        public void Honk()
-        {
-            Console.WriteLine("tut tuut!");
-        }
+       
 
     }
 }

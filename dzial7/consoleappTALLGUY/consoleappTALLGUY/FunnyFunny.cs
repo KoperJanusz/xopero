@@ -10,7 +10,7 @@ namespace consoleappTALLGUY
         {
             this.funnyThingIHave = funnyThingIHave;
         }
-        private string funnyThingIHave;
+        protected string funnyThingIHave;
         public string FunnyThingIHave
         {
             get { return "Czesc dzieciami mam " + funnyThingIHave; }
