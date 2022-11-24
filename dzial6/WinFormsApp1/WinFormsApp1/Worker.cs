@@ -6,18 +6,20 @@ namespace WinFormsApp1
 {
     class Worker : Bee
     {
-        public Worker(string[] jobsICanDo, double weightMg)
-        : base(weightMg)
+        public Worker(string[] jobsICanDo, double weightMg) : base(weightMg)
         {
             this.jobsICanDo = jobsICanDo;
         }
+
         const double honeyUnitsPerShiftWorked = .65;
+
         public override double HoneyConsumptionRate()
         {
             double consumption = base.HoneyConsumptionRate();
             consumption += shiftsWorked * honeyUnitsPerShiftWorked;
             return consumption;
         }
+
         public int ShiftsLeft
         {
             get
@@ -53,7 +55,7 @@ namespace WinFormsApp1
                 }
             return false;
         }
-            
+
         public bool DidYouFinish()
         {
             if (String.IsNullOrEmpty(currentJob))
@@ -72,4 +74,5 @@ namespace WinFormsApp1
             }
         }
     }
+}
 }
