@@ -4,9 +4,10 @@ using System.Text;
 
 namespace WinFormsApp1
 {
-    public class Queen
+    class Queen : Bee
     {
-        public Queen(Worker[] workers)
+        public Queen(Worker[] workers, double weightMg)
+        : base(weightMg)
         {
             this.workers = workers;
         }
@@ -21,10 +22,12 @@ namespace WinFormsApp1
         }
         public string WorkTheNextShift()
         {
+            double honeyConsumed = HoneyConsumptionRate();
             shiftNumber++;
             string report = "Raport zmiany numer " + shiftNumber + "\r\n";
             for (int i = 0; i < workers.Length; i++)
             {
+                honeyConsumed += workers[i].HoneyConsumptionRate();
                 if (workers[i].DidYouFinish())
                     report += "Robotnica nr " + (i + 1) + " zakonczyla swoje zadanie\r\n";
                 if (String.IsNullOrEmpty(workers[i].CurrentJob))
@@ -35,6 +38,7 @@ namespace WinFormsApp1
                 else
                     report += "Robotnica numer " + (i + 1) + " zakonczy " + workers[i].CurrentJob + "po tej zmiany \r\n";
             }
+            report += "Calkowite spozycie miodu: " + honeyConsumed + "jendostek\r\n";
             return report;
         }
     }

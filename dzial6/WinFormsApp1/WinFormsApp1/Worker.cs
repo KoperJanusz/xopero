@@ -4,13 +4,20 @@ using System.Text;
 
 namespace WinFormsApp1
 {
-    public class Worker
+    class Worker : Bee
     {
-        public Worker(string[] jobsICanDo)
+        public Worker(string[] jobsICanDo, double weightMg)
+        : base(weightMg)
         {
             this.jobsICanDo = jobsICanDo;
         }
-
+        const double honeyUnitsPerShiftWorked = .65;
+        public override double HoneyConsumptionRate()
+        {
+            double consumption = base.HoneyConsumptionRate();
+            consumption += shiftsWorked * honeyUnitsPerShiftWorked;
+            return consumption;
+        }
         public int ShiftsLeft
         {
             get
@@ -46,7 +53,7 @@ namespace WinFormsApp1
                 }
             return false;
         }
-       
+            
         public bool DidYouFinish()
         {
             if (String.IsNullOrEmpty(currentJob))
