@@ -1,4 +1,6 @@
-﻿using System;
+﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -6,6 +8,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -40,26 +43,8 @@ namespace notatnik
 
             }
         }
-        void saveAFile()
-        {
-           
 
-            if (!File.Exists(path))
-            {
-                MessageBox.Show("Plik nie istnieje");
-            }
-            else
-            {
-                
-                startText = startText.Replace(startText, textPliku.Text);
-                File.WriteAllText(path,startText);
-
-
-            }
-            
-        }
-
-
+        
 
         public void getPath()
         {
@@ -75,8 +60,7 @@ namespace notatnik
             {
                 if(new FileInfo(ofd.FileName).Length > 5)
                     {
-                    groupBox1.Visible = true;  
-                    
+                    groupBox1.Visible = true;
                     }
                 else
                 {
@@ -104,7 +88,18 @@ namespace notatnik
 
         private void saveFile_Click(object sender, EventArgs e)
         {
-            saveAFile();
+            if (!File.Exists(path))
+            {
+                MessageBox.Show("Plik nie istnieje");
+            }
+            else
+            {
+
+                startText = startText.Replace(startText, textPliku.Text);
+                File.WriteAllText(path, startText);
+
+
+            }
         }
 
         private void takBtn_Click(object sender, EventArgs e)
@@ -113,6 +108,8 @@ namespace notatnik
             
             
             openAFile();
+           
+
             MessageBox.Show("otwarto plik");
 
         }
@@ -126,18 +123,36 @@ namespace notatnik
 
         private void ctrlF_Click(object sender, EventArgs e)
         {
-            bool containsSearchResult = textBox1.Text.Contains(ctrlFtext.Text);
+
+
+            if (textPliku.Text.Contains(ctrlFtext.Text)==true&& ctrlFtext.Text!="")
+            {
+                MessageBox.Show("znaleziono tekst");
+                string v = ctrlFtext.Text.ToUpper();                         
+                textPliku.Text = textPliku.Text.Replace(ctrlFtext.Text, v);
+
+            }
             
 
-            if (containsSearchResult==true)
+            
+
+        }
+
+      
+
+        private void ctrlH_Click(object sender, EventArgs e)
+        {
+            if (ctrlFtext.Text != "" && ctrlHtext.Text.Length  >0 && textPliku.Text.Contains(ctrlFtext.Text) == true)
             {
-                MessageBox.Show("znalazlo sie");
+                textPliku.Text = textPliku.Text.Replace(ctrlFtext.Text, ctrlHtext.Text);
+                
+
             }
             else
             {
-                MessageBox.Show("nie znalazlo sie");
-
+                MessageBox.Show("nie znaleziono frazy ktorej szukasz");
             }
+
         }
     }
 }

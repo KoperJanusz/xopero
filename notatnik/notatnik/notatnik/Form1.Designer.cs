@@ -39,6 +39,7 @@ namespace notatnik
             this.nieBtn = new System.Windows.Forms.Button();
             this.takBtn = new System.Windows.Forms.Button();
             this.ctrlFtext = new System.Windows.Forms.TextBox();
+            this.ctrlHtext = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,12 +71,14 @@ namespace notatnik
             this.ctrlH.TabIndex = 3;
             this.ctrlH.Text = "ctrlH";
             this.ctrlH.UseVisualStyleBackColor = true;
+            this.ctrlH.Click += new System.EventHandler(this.ctrlH_Click);
             // 
             // textPliku
             // 
             this.textPliku.Location = new System.Drawing.Point(12, 80);
             this.textPliku.Multiline = true;
             this.textPliku.Name = "textPliku";
+            this.textPliku.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textPliku.Size = new System.Drawing.Size(776, 358);
             this.textPliku.TabIndex = 4;
             // 
@@ -138,11 +141,20 @@ namespace notatnik
             this.ctrlFtext.Size = new System.Drawing.Size(100, 43);
             this.ctrlFtext.TabIndex = 7;
             // 
+            // ctrlHtext
+            // 
+            this.ctrlHtext.Location = new System.Drawing.Point(699, 31);
+            this.ctrlHtext.Multiline = true;
+            this.ctrlHtext.Name = "ctrlHtext";
+            this.ctrlHtext.Size = new System.Drawing.Size(100, 43);
+            this.ctrlHtext.TabIndex = 8;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.ctrlHtext);
             this.Controls.Add(this.ctrlFtext);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.textPliku);
@@ -170,6 +182,7 @@ namespace notatnik
         private System.Windows.Forms.Button nieBtn;
         private System.Windows.Forms.Button takBtn;
         private System.Windows.Forms.TextBox ctrlFtext;
+        private System.Windows.Forms.TextBox ctrlHtext;
     }
 }
 
