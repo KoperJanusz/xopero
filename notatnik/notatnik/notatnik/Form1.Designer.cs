@@ -33,7 +33,6 @@ namespace notatnik
             this.saveFile = new System.Windows.Forms.Button();
             this.ctrlF = new System.Windows.Forms.Button();
             this.ctrlH = new System.Windows.Forms.Button();
-            this.textPliku = new System.Windows.Forms.TextBox();
             this.openFile = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -45,6 +44,8 @@ namespace notatnik
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.label1 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.richtextbox = new System.Windows.Forms.RichTextBox();
+            this.textPliku = new System.Windows.Forms.RichTextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -78,16 +79,6 @@ namespace notatnik
             this.ctrlH.Text = "ctrlH";
             this.ctrlH.UseVisualStyleBackColor = true;
             this.ctrlH.Click += new System.EventHandler(this.ctrlH_Click);
-            // 
-            // textPliku
-            // 
-            this.textPliku.HideSelection = false;
-            this.textPliku.Location = new System.Drawing.Point(12, 80);
-            this.textPliku.Multiline = true;
-            this.textPliku.Name = "textPliku";
-            this.textPliku.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textPliku.Size = new System.Drawing.Size(776, 358);
-            this.textPliku.TabIndex = 4;
             // 
             // openFile
             // 
@@ -188,6 +179,26 @@ namespace notatnik
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // richtextbox
+            // 
+            this.richtextbox.Location = new System.Drawing.Point(13, 80);
+            this.richtextbox.Name = "richtextbox";
+            this.richtextbox.ReadOnly = true;
+            this.richtextbox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.richtextbox.Size = new System.Drawing.Size(93, 358);
+            this.richtextbox.TabIndex = 10;
+            this.richtextbox.Text = "";
+            // 
+            // textPliku
+            // 
+            this.textPliku.Location = new System.Drawing.Point(106, 80);
+            this.textPliku.Name = "textPliku";
+            this.textPliku.Size = new System.Drawing.Size(682, 358);
+            this.textPliku.TabIndex = 11;
+            this.textPliku.Text = "";
+            this.textPliku.VScroll += new System.EventHandler(this.textPliku_VScroll);
+            this.textPliku.TextChanged += new System.EventHandler(this.textPliku_TextChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -197,6 +208,7 @@ namespace notatnik
             this.Controls.Add(this.ctrlHtext);
             this.Controls.Add(this.ctrlFtext);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.richtextbox);
             this.Controls.Add(this.textPliku);
             this.Controls.Add(this.ctrlH);
             this.Controls.Add(this.ctrlF);
@@ -219,7 +231,6 @@ namespace notatnik
         private System.Windows.Forms.Button saveFile;
         private System.Windows.Forms.Button ctrlF;
         private System.Windows.Forms.Button ctrlH;
-        private System.Windows.Forms.TextBox textPliku;
         private System.Windows.Forms.Button openFile;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox textBox1;
@@ -231,6 +242,8 @@ namespace notatnik
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.RichTextBox richtextbox;
+        private System.Windows.Forms.RichTextBox textPliku;
     }
 }
 
