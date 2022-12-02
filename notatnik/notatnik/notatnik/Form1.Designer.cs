@@ -151,7 +151,7 @@ namespace notatnik
             // 
             this.groupBox2.Controls.Add(this.progressBar1);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Location = new System.Drawing.Point(2, 2);
+            this.groupBox2.Location = new System.Drawing.Point(2, 1);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(797, 436);
             this.groupBox2.TabIndex = 9;
@@ -181,19 +181,20 @@ namespace notatnik
             // 
             // richtextbox
             // 
+            this.richtextbox.Enabled = false;
             this.richtextbox.Location = new System.Drawing.Point(13, 80);
             this.richtextbox.Name = "richtextbox";
             this.richtextbox.ReadOnly = true;
-            this.richtextbox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.richtextbox.Size = new System.Drawing.Size(93, 358);
+            this.richtextbox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.richtextbox.Size = new System.Drawing.Size(55, 358);
             this.richtextbox.TabIndex = 10;
             this.richtextbox.Text = "";
             // 
             // textPliku
             // 
-            this.textPliku.Location = new System.Drawing.Point(106, 80);
+            this.textPliku.Location = new System.Drawing.Point(65, 80);
             this.textPliku.Name = "textPliku";
-            this.textPliku.Size = new System.Drawing.Size(682, 358);
+            this.textPliku.Size = new System.Drawing.Size(723, 358);
             this.textPliku.TabIndex = 11;
             this.textPliku.Text = "";
             this.textPliku.VScroll += new System.EventHandler(this.textPliku_VScroll);

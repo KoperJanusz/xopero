@@ -127,22 +127,16 @@ namespace notatnik
 
         private void ctrlF_Click(object sender, EventArgs e)
         {
-
-
-            
-                
-                
                 for (int x = 0; x < textPliku.Lines.Count(); x++)
                 {
 
                     if (textPliku.Lines[x].ToLower().Contains (ctrlFtext.Text.ToLower()) && ctrlFtext.Text!="")
                     {
                         MessageBox.Show("znaleziony tekst znajduje sie w linicje: "+(x+1));
-                        
                     }
-                }
-            
+                }           
         }
+
         public void ponumeruj()
         {
             richtextbox.Text = "";
@@ -157,15 +151,11 @@ namespace notatnik
             if (ctrlFtext.Text != "" && ctrlHtext.Text.Length  >0 && textPliku.Text.Contains(ctrlFtext.Text) == true)
             {
                 textPliku.Text = textPliku.Text.Replace(ctrlFtext.Text, ctrlHtext.Text);
-                
-
-
             }
             else
             {
                 MessageBox.Show("nie znaleziono frazy ktorej szukasz");
             }
-
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -174,11 +164,10 @@ namespace notatnik
             if (progressBar1.Value >= 100)
             {
                 timer1.Stop();
-                groupBox2.Visible = false;
-                            
-            }
-            
+                groupBox2.Visible = false;                            
+            }           
         }
+
         public enum ScrollBarType : uint
         {
             SbHorz = 0,
