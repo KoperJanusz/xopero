@@ -29,6 +29,7 @@ namespace notatnik
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.saveFile = new System.Windows.Forms.Button();
             this.ctrlF = new System.Windows.Forms.Button();
             this.ctrlH = new System.Windows.Forms.Button();
@@ -40,7 +41,12 @@ namespace notatnik
             this.takBtn = new System.Windows.Forms.Button();
             this.ctrlFtext = new System.Windows.Forms.TextBox();
             this.ctrlHtext = new System.Windows.Forms.TextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.label1 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // saveFile
@@ -75,6 +81,7 @@ namespace notatnik
             // 
             // textPliku
             // 
+            this.textPliku.HideSelection = false;
             this.textPliku.Location = new System.Drawing.Point(12, 80);
             this.textPliku.Multiline = true;
             this.textPliku.Name = "textPliku";
@@ -149,11 +156,44 @@ namespace notatnik
             this.ctrlHtext.Size = new System.Drawing.Size(100, 43);
             this.ctrlHtext.TabIndex = 8;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.progressBar1);
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Location = new System.Drawing.Point(2, 2);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(797, 436);
+            this.groupBox2.TabIndex = 9;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Visible = false;
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(10, 236);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(776, 23);
+            this.progressBar1.Step = 1;
+            this.progressBar1.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(358, 120);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(38, 15);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "wait...";
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.ctrlHtext);
             this.Controls.Add(this.ctrlFtext);
             this.Controls.Add(this.groupBox1);
@@ -162,10 +202,14 @@ namespace notatnik
             this.Controls.Add(this.ctrlF);
             this.Controls.Add(this.saveFile);
             this.Controls.Add(this.openFile);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form1";
-            this.Text = "Notatnik";
+            this.Text = " ";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -183,6 +227,10 @@ namespace notatnik
         private System.Windows.Forms.Button takBtn;
         private System.Windows.Forms.TextBox ctrlFtext;
         private System.Windows.Forms.TextBox ctrlHtext;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

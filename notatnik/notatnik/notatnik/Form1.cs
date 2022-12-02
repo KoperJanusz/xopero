@@ -14,19 +14,19 @@ using System.Windows.Forms;
 
 namespace notatnik
 {
-
+    
     public partial class Form1 : Form
     {
         string path;
         string startText;
-        
 
 
         public Form1()
         {
             InitializeComponent();
             
-            
+
+
         }
         void openAFile()
         {
@@ -36,16 +36,17 @@ namespace notatnik
             {
                 MessageBox.Show("Plik nie istnieje");
             }
-            else
+            else 
             {
+                
                 textPliku.Text= File.ReadAllText(path);
                 startText= textPliku.Text;
+                
 
             }
         }
 
-        
-
+     
         public void getPath()
         {
 
@@ -54,19 +55,25 @@ namespace notatnik
             openFileDialog1.InitialDirectory = "c:\\";
             openFileDialog1.Filter = "Access files (*.txt)|";
 
-
-           var ofd = openFileDialog1;
+            
+            var ofd = openFileDialog1;
             if (ofd.ShowDialog() == DialogResult.OK)
             {
                 if(new FileInfo(ofd.FileName).Length > 5)
-                    {
+                {
+                   
                     groupBox1.Visible = true;
-                    }
+                    
+
+                }
                 else
                 {
+                    
+                    
+                    
                     openAFile();
                 }
-                
+
             }
 
             path = @openFileDialog1.FileName;
@@ -94,7 +101,6 @@ namespace notatnik
             }
             else
             {
-
                 startText = startText.Replace(startText, textPliku.Text);
                 File.WriteAllText(path, startText);
 
@@ -104,20 +110,21 @@ namespace notatnik
 
         private void takBtn_Click(object sender, EventArgs e)
         {
+
             groupBox1.Visible = false;
-            
+            groupBox2.Visible = true;
+            timer1.Start();
             
             openAFile();
-           
 
-            MessageBox.Show("otwarto plik");
+
+
 
         }
 
         private void nieBtn_Click(object sender, EventArgs e)
         {
             groupBox1.Visible = false;
-            MessageBox.Show("Nie zgodziles sie na otwarcie pliku");
 
         }
 
@@ -125,21 +132,37 @@ namespace notatnik
         {
 
 
-            if (textPliku.Text.Contains(ctrlFtext.Text)==true&& ctrlFtext.Text!="")
+            if (textPliku.Text.ToLower().Contains(ctrlFtext.Text.ToLower())==true&& ctrlFtext.Text!="")
             {
                 MessageBox.Show("znaleziono tekst");
                 string v = ctrlFtext.Text.ToUpper();                         
                 textPliku.Text = textPliku.Text.Replace(ctrlFtext.Text, v);
+                
+                for (int x = 1; x <= textPliku.Lines.Count(); x++)
+                {
+
+                    if (textPliku.Lines[x-1].ToLower() == ctrlFtext.Text.ToLower())
+                    {
+                        
+                        
+                        MessageBox.Show("znaleziony tekst znajduje sie w linicje: "+x);
+                        textPliku.SelectionStart = x*3;
+                        textPliku.SelectionLength = textPliku.Lines[x-1].Length;
+                        textPliku.ScrollToCaret();
+                        //  nie     nie mam pojecia czemu, nie wiem na jakiej zasadzie to dziala po prostu nieamsdmwwwchuj chuj chuj chj cucjhhasdad;;wasd ammsadammmmmsdkadoasdw
+                    }
+                }
+                
+                
 
             }
             
-
             
 
         }
 
       
-
+            
         private void ctrlH_Click(object sender, EventArgs e)
         {
             if (ctrlFtext.Text != "" && ctrlHtext.Text.Length  >0 && textPliku.Text.Contains(ctrlFtext.Text) == true)
@@ -154,5 +177,18 @@ namespace notatnik
             }
 
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            progressBar1.Value += 2;
+            if (progressBar1.Value >= 100)
+            {
+                timer1.Stop();
+                groupBox2.Visible = false;
+                            
+            }
+            
+        }
     }
 }
+//w timerze sprawdzam dlugosc pliku i na nim daje maxa, i przeskakuje potem o 5% jego maxa
